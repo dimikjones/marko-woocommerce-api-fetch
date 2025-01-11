@@ -98,12 +98,12 @@ final class Main {
 	public static function init() {
 
 		// Before init action.
-		do_action( 'before_plugin_name_init' );
+		do_action( 'before_marko_woocommerce_api_fetch_init' );
 
 		// Add needed hooks here.
 
 		// After init action.
-		do_action( 'plugin_name_init' );
+		do_action( 'marko_woocommerce_api_fetch_init' );
 	}
 
 

@@ -78,7 +78,7 @@ abstract class Assets {
 	 */
 	public static function get_styles() {
 		// Allow to change the list of styles.
-		return apply_filters( 'plugin_name_enqueue_styles', array() );
+		return apply_filters( 'marko_woocommerce_api_fetch_enqueue_styles', array() );
 	}
 
 
@@ -89,7 +89,7 @@ abstract class Assets {
 	 */
 	public static function get_scripts() {
 		// Allow to change the list of scripts.
-		return apply_filters( 'plugin_name_enqueue_scripts', array() );
+		return apply_filters( 'marko_woocommerce_api_fetch_enqueue_scripts', array() );
 	}
 
 
@@ -202,7 +202,7 @@ abstract class Assets {
 	 */
 	public static function load_scripts() {
 
-		if ( ! did_action( 'before_plugin_name_init' ) ) {
+		if ( ! did_action( 'before_marko_woocommerce_api_fetch_init' ) ) {
 			return;
 		}
 

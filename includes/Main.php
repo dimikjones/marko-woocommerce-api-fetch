@@ -39,7 +39,7 @@ final class Main {
 		add_action( 'init', array( __CLASS__, 'init' ) );
 
 		// Perform other actions when plugin is loaded.
-		do_action( 'plugin_name_loaded' );
+		do_action( 'marko_woocommerce_api_fetch_loader' );
 	}
 
 
@@ -49,7 +49,7 @@ final class Main {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'plugin-name' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'marko-woocommerce-api-fetch' ), '1.0.0' );
 	}
 
 
@@ -59,7 +59,7 @@ final class Main {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'plugin-name' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'marko-woocommerce-api-fetch' ), '1.0.0' );
 	}
 
 
@@ -86,7 +86,7 @@ final class Main {
 		self::load_plugin_textdomain();
 
 		// Init action.
-		do_action( 'plugin_name_loaded' );
+		do_action( 'marko_woocommerce_api_fetch_loader' );
 	}
 
 
@@ -119,17 +119,17 @@ final class Main {
 
 		if ( ! version_compare( PHP_VERSION, self::PLUGIN_REQUIREMENTS['php_version'], '>=' ) ) {
 			/* Translators: The minimum PHP version */
-			$errors[] = sprintf( esc_html__( 'WordPress Plugin Boilerplate requires a minimum PHP version of %s.', 'plugin-name' ), self::PLUGIN_REQUIREMENTS['php_version'] );
+			$errors[] = sprintf( esc_html__( 'WordPress Plugin Boilerplate requires a minimum PHP version of %s.', 'marko-woocommerce-api-fetch' ), self::PLUGIN_REQUIREMENTS['php_version'] );
 		}
 
 		if ( ! version_compare( $wp_version, self::PLUGIN_REQUIREMENTS['wp_version'], '>=' ) ) {
 			/* Translators: The minimum WP version */
-			$errors[] = sprintf( esc_html__( 'WordPress Plugin Boilerplate requires a minimum WordPress version of %s.', 'plugin-name' ), self::PLUGIN_REQUIREMENTS['wp_version'] );
+			$errors[] = sprintf( esc_html__( 'WordPress Plugin Boilerplate requires a minimum WordPress version of %s.', 'marko-woocommerce-api-fetch' ), self::PLUGIN_REQUIREMENTS['wp_version'] );
 		}
 
 		if ( isset( self::PLUGIN_REQUIREMENTS['wc_version'] ) && ( ! defined( 'WC_VERSION' ) || ! version_compare( WC_VERSION, self::PLUGIN_REQUIREMENTS['wc_version'], '>=' ) ) ) {
 			/* Translators: The minimum WC version */
-			$errors[] = sprintf( esc_html__( 'WordPress Plugin Boilerplate requires a minimum WooCommerce version of %s.', 'plugin-name' ), self::PLUGIN_REQUIREMENTS['wc_version'] );
+			$errors[] = sprintf( esc_html__( 'WordPress Plugin Boilerplate requires a minimum WooCommerce version of %s.', 'marko-woocommerce-api-fetch' ), self::PLUGIN_REQUIREMENTS['wc_version'] );
 		}
 
 		if ( empty( $errors ) ) {
@@ -172,10 +172,10 @@ final class Main {
 	private static function load_plugin_textdomain() {
 
 		// Add plugin's locale.
-		$locale = apply_filters( 'plugin_locale', get_locale(), 'plugin-name' );
+		$locale = apply_filters( 'plugin_locale', get_locale(), 'marko-woocommerce-api-fetch' );
 
-		load_textdomain( 'plugin-name', WP_LANG_DIR . '/plugin-name/plugin-name-' . $locale . '.mo' );
+		load_textdomain( 'marko-woocommerce-api-fetch', WP_LANG_DIR . '/plugin-name/plugin-name-' . $locale . '.mo' );
 
-		load_plugin_textdomain( 'plugin-name', false, plugin_basename( dirname( __FILE__ ) ) . '/i18n/languages' );
+		load_plugin_textdomain( 'marko-woocommerce-api-fetch', false, plugin_basename( dirname( __FILE__ ) ) . '/i18n/languages' );
 	}
 }

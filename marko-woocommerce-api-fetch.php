@@ -20,7 +20,7 @@
  * Author URI:  http://example.com/
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain: mwaf-translate
+ * Text Domain: marko-woocommerce-api-fetch
  * Domain Path: /i18n/languages
  */
 
@@ -51,7 +51,7 @@ const PLUGIN_FILE = __FILE__;
 function get_error() {
 	return array(
 		/* translators: 1: composer command. 2: plugin directory */
-		'message'   => esc_html__( 'Your installation of WordPress Plugin Boilerplate plugin is incomplete. Please run %1$s within the %2$s directory.', 'plugin-name' ),
+		'message'   => esc_html__( 'Your installation of WordPress Plugin Boilerplate plugin is incomplete. Please run %1$s within the %2$s directory.', 'marko-woocommerce-api-fetch' ),
 		'command'   => 'composer install',
 		'directory' => esc_html( str_replace( ABSPATH, '', __DIR__ ) ),
 	);

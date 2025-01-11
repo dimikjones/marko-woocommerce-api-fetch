@@ -28,4 +28,15 @@ final class Install {
 		// Trigger action.
 		do_action( 'marko_woocommerce_api_fetch_installed', $sitewide );
 	}
+
+	/**
+	 * Deactivate action.
+	 */
+	public static function deactivate( $sitewide = false ) {
+
+		// Perform install actions here.
+
+		// Trigger action.
+		do_action( 'marko_woocommerce_api_fetch_deactivated', $sitewide );
+	}
 }

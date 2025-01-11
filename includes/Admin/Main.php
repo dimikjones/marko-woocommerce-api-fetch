@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Main {
 
 	/**
-	 * Initialize hooks
+	 * Initialize hooks.
 	 *
 	 * @return void
 	 */
@@ -27,9 +27,10 @@ final class Main {
 
 		Assets::hooks();
 
+		Admin_Settings::hooks();
+
 		add_action( 'current_screen', array( __CLASS__, 'conditional_includes' ) );
 	}
-
 
 	/**
 	 * Include admin files conditionally.

@@ -16,7 +16,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Plugin_Name\\": "includes/"
+			"Marko_WooCommerce_Api_Fetch\\": "includes/"
 		}
 	},
 	"config": {

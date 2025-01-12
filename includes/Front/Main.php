@@ -25,5 +25,7 @@ final class Main {
 	 */
 	public static function hooks() {
 		Assets::hooks();
+
+		Woo_My_Account_Settings::hooks();
 	}
 }

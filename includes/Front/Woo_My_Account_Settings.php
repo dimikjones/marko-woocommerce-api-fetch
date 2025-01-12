@@ -54,9 +54,8 @@ final class Woo_My_Account_Settings {
 	// Note: add_action must follow 'woocommerce_account_{your-endpoint-slug}_endpoint' format.
 	public static function user_posts_tab_content() {
 		printf( '<h3>%s</h3>', esc_html__( 'User Specific Posts', 'marko-woocommerce-api-fetch' ) );
-		// TODO: call template from templates folder
 		Template::get_part( 'public', 'my-account-user-posts-form' );
-		//$this->my_account_tab_form();
+		// TODO: print values from API
 		echo do_shortcode( ' /* your shortcode here */ ' );
 	}
 
@@ -92,8 +91,7 @@ final class Woo_My_Account_Settings {
 	 * Save user preferences in my-account/user-posts tab.
 	 */
 	public static function save_account_details() {
-		// TODO: sanitize
-		$nonce_value = wc_get_var( $_REQUEST['marko_woocommerce_api_fetch_nonce'], wc_get_var( $_REQUEST['_wpnonce'], '' ) );
+		$nonce_value = sanitize_key( wc_get_var( $_REQUEST['marko_woocommerce_api_fetch_nonce'], wc_get_var( $_REQUEST['_wpnonce'], '' ) ) );
 
 		if ( ! wp_verify_nonce( $nonce_value, 'marko_woocommerce_api_fetch_action' ) ) {
 			return;
@@ -104,6 +102,8 @@ final class Woo_My_Account_Settings {
 		}
 
 		$recipient_name = ! empty( $_POST['user_posts_filter_name'] ) ? sanitize_text_field( wp_unslash( $_POST['user_posts_filter_name'] ) ) : '';
+		$pizza_size     = ! empty( $_POST['user_posts_filter_pizza_size'] ) ? sanitize_text_field( wp_unslash( $_POST['user_posts_filter_pizza_size'] ) ) : '';
+		$pizza_topping  = ! empty( $_POST['user_posts_filter_pizza_topping'] ) ? map_deep( wp_unslash( $_POST['user_posts_filter_pizza_topping'] ), 'sanitize_text_field' ) : array();
 
 		wc_nocache_headers();
 
@@ -115,5 +115,7 @@ final class Woo_My_Account_Settings {
 
 		// Update user meta value.
 		update_user_meta( $user_id, 'marko_waf_user_posts_filter_name', $recipient_name );
+		update_user_meta( $user_id, 'marko_waf_user_posts_filter_pizza_size', $pizza_size );
+		update_user_meta( $user_id, 'marko_waf_user_posts_filter_pizza_topping', $pizza_topping );
 	}
 }

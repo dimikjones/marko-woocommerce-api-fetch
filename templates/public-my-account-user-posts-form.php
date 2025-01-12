@@ -32,7 +32,9 @@ $url = wp_nonce_url( $url, 'marko_woocommerce_api_fetch_nonce' );
 $holder_classes   = array();
 $holder_classes[] = 'marko-waf-admin-form-section woocommerce';
 
-$user_posts_filter_name = get_user_meta( $user_id, 'marko_waf_user_posts_filter_name', true );
+$user_posts_filter_name          = get_user_meta( $user_id, 'marko_waf_user_posts_filter_name', true );
+$user_posts_filter_pizza_size    = get_user_meta( $user_id, 'marko_waf_user_posts_filter_pizza_size', true );
+$user_posts_filter_pizza_topping = get_user_meta( $user_id, 'marko_waf_user_posts_filter_pizza_topping', true );
 ?>
 <div class="<?php echo esc_attr( implode( '', $holder_classes ) ); ?>">
 	<form class="marko-waf-admin-form" method="post" action="<?php echo esc_url( $url ); ?>">
@@ -46,13 +48,48 @@ $user_posts_filter_name = get_user_meta( $user_id, 'marko_waf_user_posts_filter_
 				<legend><?php esc_html_e( 'Pizza Size', 'marko-woocommerce-api-fetch' ); ?></legend>
 
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-					<label><input type="radio" checked name="size" value="<?php echo esc_attr( 'small' ); ?>"><?php esc_html_e( 'Small', 'marko-woocommerce-api-fetch' ); ?></label>
+					<label>
+						<input type="radio" <?php echo ! empty( $user_posts_filter_pizza_size ) && 'small' === $user_posts_filter_pizza_size ? esc_attr( 'checked' ) : ''; ?> name="user_posts_filter_pizza_size" value="<?php echo esc_attr( 'small' ); ?>">
+						<?php esc_html_e( 'Small', 'marko-woocommerce-api-fetch' ); ?>
+					</label>
 				</p>
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-					<label><input type="radio" name="size" value="<?php echo esc_attr( 'medium' ); ?>"><?php esc_html_e( 'Medium', 'marko-woocommerce-api-fetch' ); ?></label>
+					<label>
+						<input type="radio" <?php echo ! empty( $user_posts_filter_pizza_size ) && 'medium' === $user_posts_filter_pizza_size ? esc_attr( 'checked' ) : ''; ?> name="user_posts_filter_pizza_size" value="<?php echo esc_attr( 'medium' ); ?>">
+						<?php esc_html_e( 'Medium', 'marko-woocommerce-api-fetch' ); ?>
+					</label>
 				</p>
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-					<label><input type="radio" name="size" value="<?php echo esc_attr( 'large' ); ?>"><?php esc_html_e( 'Large', 'marko-woocommerce-api-fetch' ); ?></label>
+					<label>
+						<input type="radio" <?php echo ! empty( $user_posts_filter_pizza_size ) && 'large' === $user_posts_filter_pizza_size ? esc_attr( 'checked' ) : ''; ?> name="user_posts_filter_pizza_size" value="<?php echo esc_attr( 'large' ); ?>">
+						<?php esc_html_e( 'Large', 'marko-woocommerce-api-fetch' ); ?>
+					</label>
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend><?php esc_html_e( 'Pizza Toppings', 'marko-woocommerce-api-fetch' ); ?></legend>
+				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+					<label>
+						<input type="checkbox" <?php echo in_array( 'bacon', $user_posts_filter_pizza_topping ) ? 'checked' : ''; ?> name="user_posts_filter_pizza_topping[]" value="<?php echo esc_attr( 'bacon' ); ?>">
+						<?php esc_html_e( 'Bacon', 'marko-woocommerce-api-fetch' ); ?>
+					</label>
+				</p>
+				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+					<label>
+						<input type="checkbox" <?php echo in_array( 'cheese', $user_posts_filter_pizza_topping ) ? 'checked' : ''; ?> name="user_posts_filter_pizza_topping[]" value="<?php echo esc_attr( 'cheese' ); ?>">
+						<?php esc_html_e( 'Extra Cheese', 'marko-woocommerce-api-fetch' ); ?>
+					</label>
+				</p>
+				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+					<label><input type="checkbox" <?php echo in_array( 'onion', $user_posts_filter_pizza_topping ) ? 'checked' : ''; ?> name="user_posts_filter_pizza_topping[]" value="<?php echo esc_attr( 'onion' ); ?>">
+						<?php esc_html_e( 'Onion', 'marko-woocommerce-api-fetch' ); ?>
+					</label>
+				</p>
+				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+					<label>
+						<input type="checkbox" <?php echo in_array( 'mushroom', $user_posts_filter_pizza_topping ) ? 'checked' : ''; ?> name="user_posts_filter_pizza_topping[]" value="<?php echo esc_attr( 'mushroom' ); ?>">
+						<?php esc_html_e( 'Mushroom', 'marko-woocommerce-api-fetch' ); ?>
+					</label>
 				</p>
 			</fieldset>
 		</div>
@@ -65,4 +102,3 @@ $user_posts_filter_name = get_user_meta( $user_id, 'marko_waf_user_posts_filter_
 		</div>
 	</form>
 </div>
-

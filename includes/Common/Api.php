@@ -99,7 +99,7 @@ final class Api {
 		return $html;
 	}
 
-	public static function get_formated_response() {
+	public static function get_formatted_response() {
 		$response = self::get_post_response();
 
 		$response_arr = array();
@@ -109,6 +109,8 @@ final class Api {
 		! empty( $response->pizza_topping ) ? $response_arr[ esc_html__( 'Pizza Topping', 'marko_woocommerce_api_fetch_nonce' ) ] = $response->pizza_topping : [];
 
 		$html = '<div class="marko-waf-public user-preferences">';
+
+		$html .= "<h4>" . esc_html__( 'User Preferences from API Response', 'marko_woocommerce_api_fetch_nonce' ) . "</h4>";
 
 		foreach ( $response_arr as $key => $preference ) :
 			$preference = is_array( $preference ) ? implode( ', ', $preference ) : $preference;

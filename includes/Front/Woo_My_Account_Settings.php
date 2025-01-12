@@ -57,7 +57,7 @@ final class Woo_My_Account_Settings {
 		printf( '<h3>%s</h3>', esc_html__( 'User Specific Posts', 'marko-woocommerce-api-fetch' ) );
 		Template::get_part( 'public', 'my-account-user-posts-form' );
 
-		$response = Common\Api::get_formated_response();
+		$response = Common\Api::get_formatted_response();
 
 		echo wp_kses_post( $response );
 	}

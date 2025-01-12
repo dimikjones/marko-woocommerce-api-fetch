@@ -10,6 +10,7 @@
 namespace Marko_WooCommerce_Api_Fetch\Front;
 
 use Marko_WooCommerce_Api_Fetch\Template;
+use Marko_WooCommerce_Api_Fetch\Common;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -55,8 +56,10 @@ final class Woo_My_Account_Settings {
 	public static function user_posts_tab_content() {
 		printf( '<h3>%s</h3>', esc_html__( 'User Specific Posts', 'marko-woocommerce-api-fetch' ) );
 		Template::get_part( 'public', 'my-account-user-posts-form' );
-		// TODO: print values from API
-		echo do_shortcode( ' /* your shortcode here */ ' );
+
+		$response = Common\Api::get_formated_response();
+
+		echo wp_kses_post( $response );
 	}
 
 	// Flush permalinks once on plugin activation.

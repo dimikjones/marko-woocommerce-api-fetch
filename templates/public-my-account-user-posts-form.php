@@ -41,7 +41,7 @@ $user_posts_filter_pizza_topping = get_user_meta( $user_id, 'marko_waf_user_post
 		<div class="marko-waf-admin-options-block">
 			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 				<label for="user_posts_filter_name"><?php esc_html_e( 'Name', 'marko-woocommerce-api-fetch' ); ?></label>
-				<input type="text" pattern="[a-zA-Z0-9]+" class="woocommerce-Input woocommerce-Input--text input-text" name="user_posts_filter_name" id="user_posts_filter_name" value="<?php echo esc_attr( $user_posts_filter_name ); ?>" />
+				<input type="text" autocomplete="given-name" class="woocommerce-Input woocommerce-Input--text input-text" name="user_posts_filter_name" id="user_posts_filter_name" value="<?php echo esc_attr( $user_posts_filter_name ); ?>" />
 				<span><em><?php esc_html_e( 'Enter name for the recipient.', 'marko-woocommerce-api-fetch' ); ?></em></span>
 			</p>
 			<fieldset>

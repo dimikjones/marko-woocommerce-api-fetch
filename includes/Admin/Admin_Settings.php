@@ -59,7 +59,7 @@ final class Admin_Settings {
 			'marko-woocommerce-api-fetch',
 			'marko_woocommerce_api_fetch_section_first',
 			array(
-				'label_for' => 'marko-woocommerce-api-fetch-field-pill',
+				'label_for' => 'marko-woocommerce-api-fetch-field-transient',
 				'class'     => 'marko-woocommerce-api-fetch-row',
 				'marko_woocommerce_api_fetch_custom_data' => 'custom',
 			)

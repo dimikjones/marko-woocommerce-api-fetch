@@ -10,6 +10,7 @@ namespace Marko_WooCommerce_Api_Fetch;
 
 use Marko_WooCommerce_Api_Fetch\Admin\Main as Admin;
 use Marko_WooCommerce_Api_Fetch\Front\Main as Front;
+use Marko_WooCommerce_Api_Fetch\Common\Main as Common;
 
 
 /**
@@ -82,6 +83,7 @@ final class Main {
 
 		if ( Utils::is_request( 'frontend' ) ) {
 			Front::hooks();
+			Common::hooks();
 		}
 
 		// Set up localisation.

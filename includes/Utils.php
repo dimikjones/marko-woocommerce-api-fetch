@@ -66,7 +66,7 @@ final class Utils {
 	 */
 	public static function template_path() {
 		// Allow 3rd party plugin filter template path from their plugin.
-		return apply_filters( 'marko_woocommerce_api_fetch_template_path', 'plugin-name/' );
+		return apply_filters( 'marko_woocommerce_api_fetch_template_path', 'marko-woocommerce-api-fetch/' );
 	}
 
 

@@ -168,15 +168,15 @@ final class Main {
 	 * Note: the first-loaded translation file overrides any following ones if the same translation is present.
 	 *
 	 * Locales found in:
-	 *      - WP_LANG_DIR/plugin-name/plugin-name-LOCALE.mo
-	 *      - WP_LANG_DIR/plugins/plugin-name-LOCALE.mo
+	 *      - WP_LANG_DIR/marko-woocommerce-api-fetch/marko-woocommerce-api-fetch-LOCALE.mo
+	 *      - WP_LANG_DIR/plugins/marko-woocommerce-api-fetch-LOCALE.mo
 	 */
 	private static function load_plugin_textdomain() {
 
 		// Add plugin's locale.
 		$locale = apply_filters( 'plugin_locale', get_locale(), 'marko-woocommerce-api-fetch' );
 
-		load_textdomain( 'marko-woocommerce-api-fetch', WP_LANG_DIR . '/plugin-name/plugin-name-' . $locale . '.mo' );
+		load_textdomain( 'marko-woocommerce-api-fetch', WP_LANG_DIR . '/marko-woocommerce-api-fetch/marko-woocommerce-api-fetch-' . $locale . '.mo' );
 
 		load_plugin_textdomain( 'marko-woocommerce-api-fetch', false, plugin_basename( dirname( __FILE__ ) ) . '/i18n/languages' );
 	}

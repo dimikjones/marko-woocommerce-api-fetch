@@ -41,8 +41,8 @@ final class Assets {
 	 */
 	public static function add_styles( $styles ) {
 
-		$styles['plugin-name-admin'] = array(
-			'src' => AssetsMain::localize_asset( 'css/admin/plugin-name.css' ),
+		$styles['marko-woocommerce-api-fetch-admin'] = array(
+			'src' => AssetsMain::localize_asset( 'css/admin/marko-woocommerce-api-fetch.css' ),
 		);
 
 		return $styles;
@@ -57,8 +57,8 @@ final class Assets {
 	 */
 	public static function add_scripts( $scripts ) {
 
-		$scripts['plugin-name-admin'] = array(
-			'src'  => AssetsMain::localize_asset( 'js/admin/plugin-name.js' ),
+		$scripts['marko-woocommerce-api-fetch-admin'] = array(
+			'src'  => AssetsMain::localize_asset( 'js/admin/marko-woocommerce-api-fetch.js' ),
 			'data' => array(
 				'ajax_url' => Utils::ajax_url(),
 			),

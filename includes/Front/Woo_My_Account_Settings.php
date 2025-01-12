@@ -9,6 +9,8 @@
 
 namespace Marko_WooCommerce_Api_Fetch\Front;
 
+use Marko_WooCommerce_Api_Fetch\Template;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -53,6 +55,7 @@ final class Woo_My_Account_Settings {
 	public static function user_posts_tab_content() {
 		printf( '<h3>%s</h3>', esc_html__( 'User Specific Posts', 'marko-woocommerce-api-fetch' ) );
 		// TODO: call template from templates folder
+		Template::get_part( 'public', 'my-account-user-posts-form' );
 		//$this->my_account_tab_form();
 		echo do_shortcode( ' /* your shortcode here */ ' );
 	}
@@ -86,7 +89,7 @@ final class Woo_My_Account_Settings {
 	}
 
 	/**
-	 * Save the filter pattern in my-account/user-posts tab.
+	 * Save user preferences in my-account/user-posts tab.
 	 */
 	public static function save_account_details() {
 		// TODO: sanitize
@@ -100,7 +103,7 @@ final class Woo_My_Account_Settings {
 			return;
 		}
 
-		$user_pattern_value = ! empty( $_POST['user_posts_filter_pattern'] ) ? sanitize_text_field( wp_unslash( $_POST['user_posts_filter_pattern'] ) ) : '';
+		$recipient_name = ! empty( $_POST['user_posts_filter_name'] ) ? sanitize_text_field( wp_unslash( $_POST['user_posts_filter_name'] ) ) : '';
 
 		wc_nocache_headers();
 
@@ -111,6 +114,6 @@ final class Woo_My_Account_Settings {
 		}
 
 		// Update user meta value.
-		update_user_meta( $user_id, 'marko_waf_user_posts_filter_pattern', $user_pattern_value );
+		update_user_meta( $user_id, 'marko_waf_user_posts_filter_name', $recipient_name );
 	}
 }

@@ -37,7 +37,7 @@ class Api_Widget extends WP_Widget {
 	public function __construct() {
 		// Instantiate the parent object.
 		$widget_ops = array(
-			'description' => esc_html__( 'Widget for displaying user preferences response from API Call.' ),
+			'description' => esc_html__( 'Widget for displaying user preferences response from API Call.', 'marko-woocommerce-api-fetch' ),
 		);
 
 		parent::__construct( 'api_widget', 'API Widget', $widget_ops );

@@ -86,7 +86,7 @@ final class Api {
 			// If there's an error, display a message.
 			if ( is_wp_error( $response ) ) {
 				$html = '<div id="post-error">';
-				$html .= esc_html__( 'There was a problem retrieving the response from the server.', 'marko_woocommerce_api_fetch_nonce' );
+				$html .= esc_html__( 'There was a problem retrieving the response from the server.', 'marko-woocommerce-api-fetch' );
 				$html .= '</div>';
 			} else {
 				$initial_response = json_decode( $response['body'], true );
@@ -108,13 +108,13 @@ final class Api {
 
 		$response_arr = array();
 
-		! empty( $response->name ) ? $response_arr[ esc_html__( 'Recipient Name', 'marko_woocommerce_api_fetch_nonce' ) ] = $response->name : [];
-		! empty( $response->pizza_size ) ? $response_arr[ esc_html__( 'Pizza Size', 'marko_woocommerce_api_fetch_nonce' ) ] = $response->pizza_size : [];
-		! empty( $response->pizza_topping ) ? $response_arr[ esc_html__( 'Pizza Topping', 'marko_woocommerce_api_fetch_nonce' ) ] = $response->pizza_topping : [];
+		! empty( $response->name ) ? $response_arr[ esc_html__( 'Recipient Name', 'marko-woocommerce-api-fetch' ) ] = $response->name : [];
+		! empty( $response->pizza_size ) ? $response_arr[ esc_html__( 'Pizza Size', 'marko-woocommerce-api-fetch' ) ] = $response->pizza_size : [];
+		! empty( $response->pizza_topping ) ? $response_arr[ esc_html__( 'Pizza Topping', 'marko-woocommerce-api-fetch' ) ] = $response->pizza_topping : [];
 
 		$html = '<div class="marko-waf-public user-preferences">';
 
-		$html .= "<h4 class='marko-waf-heading'>" . esc_html__( 'User Preferences from API Response', 'marko_woocommerce_api_fetch_nonce' ) . "</h4>";
+		$html .= "<h4 class='marko-waf-heading'>" . esc_html__( 'User Preferences from API Response', 'marko-woocommerce-api-fetch' ) . "</h4>";
 
 		foreach ( $response_arr as $key => $preference ) :
 			$preference = is_array( $preference ) ? implode( ', ', $preference ) : $preference;

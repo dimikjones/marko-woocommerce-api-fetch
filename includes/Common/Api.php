@@ -40,7 +40,12 @@ final class Api {
 
 		$user_id = get_current_user_id();
 
-		if ( get_transient( 'marko_woocommerce_api_fetch_transient_id_' . $user_id ) ) {
+		$get_plugin_options = get_option( 'marko_woocommerce_api_fetch_options' );
+
+		$transient_option = maybe_unserialize( $get_plugin_options['marko-woocommerce-api-fetch-field-transient'] );
+		$transient_option = isset( $transient_option ) && ! empty( $transient_option ) ? $transient_option : 0;
+
+		if ( 0 !== $transient_option && get_transient( 'marko_woocommerce_api_fetch_transient_id_' . $user_id ) ) {
 			$html = get_transient( 'marko_woocommerce_api_fetch_transient_id_' . $user_id );
 		} else {
 
@@ -90,12 +95,6 @@ final class Api {
 				$needed_response = json_decode( $needed_response );
 
 				$html = $needed_response;
-
-				$get_plugin_options = get_option( 'marko_woocommerce_api_fetch_options' );
-
-				$transient_option = maybe_unserialize( $get_plugin_options['marko-woocommerce-api-fetch-field-transient'] );
-
-				$transient_option = isset( $transient_option ) && ! empty( $transient_option ) ? $transient_option : 0;
 
 				set_transient( 'marko_woocommerce_api_fetch_transient_id_' . $user_id, $html, intval( $transient_option ) );
 			}

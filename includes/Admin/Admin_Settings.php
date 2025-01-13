@@ -122,7 +122,7 @@ final class Admin_Settings {
 		}
 
 		// WPCS: input var ok.
-		if ( isset( $_REQUEST['settings-updated'] ) ) {
+		if ( isset( $_REQUEST['settings-updated'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			// Add settings saved message with the class of "updated".
 			add_settings_error( 'marko_woocommerce_api_fetch_messages', 'marko_woocommerce_api_fetch_message', esc_html__( 'Settings Saved', 'marko-woocommerce-api-fetch' ), 'updated' );
 		}

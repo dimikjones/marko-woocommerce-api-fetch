@@ -1,9 +1,8 @@
-=== Marko WooCommerce API Fetch Plugin ===
-Contributors:
-Donate link:
+=== Marko WooCommerce API Fetch ===
 Tags: woocommerce my-account, woocommerce api
 Requires at least: 6.3
 Tested up to: 6.7.1
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

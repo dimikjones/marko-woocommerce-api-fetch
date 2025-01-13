@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Front main class
+ * Common main class
  */
 final class Main {
 

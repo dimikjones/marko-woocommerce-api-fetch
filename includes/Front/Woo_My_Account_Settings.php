@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Admin main class
+ * Admin Woo_My_Account_Settings class
  */
 final class Woo_My_Account_Settings {
 

@@ -70,24 +70,24 @@ $user_posts_filter_pizza_topping = get_user_meta( $user_id, 'marko_waf_user_post
 				<legend><?php esc_html_e( 'Pizza Toppings', 'marko-woocommerce-api-fetch' ); ?></legend>
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 					<label>
-						<input type="checkbox" <?php echo in_array( 'bacon', $user_posts_filter_pizza_topping ) ? 'checked' : ''; ?> name="user_posts_filter_pizza_topping[]" value="<?php echo esc_attr( 'bacon' ); ?>">
+						<input type="checkbox" <?php echo is_array( $user_posts_filter_pizza_topping ) && in_array( 'bacon', $user_posts_filter_pizza_topping ) ? 'checked' : ''; ?> name="user_posts_filter_pizza_topping[]" value="<?php echo esc_attr( 'bacon' ); ?>">
 						<?php esc_html_e( 'Bacon', 'marko-woocommerce-api-fetch' ); ?>
 					</label>
 				</p>
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 					<label>
-						<input type="checkbox" <?php echo in_array( 'cheese', $user_posts_filter_pizza_topping ) ? 'checked' : ''; ?> name="user_posts_filter_pizza_topping[]" value="<?php echo esc_attr( 'cheese' ); ?>">
+						<input type="checkbox" <?php echo is_array( $user_posts_filter_pizza_topping ) && in_array( 'cheese', $user_posts_filter_pizza_topping ) ? 'checked' : ''; ?> name="user_posts_filter_pizza_topping[]" value="<?php echo esc_attr( 'cheese' ); ?>">
 						<?php esc_html_e( 'Extra Cheese', 'marko-woocommerce-api-fetch' ); ?>
 					</label>
 				</p>
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-					<label><input type="checkbox" <?php echo in_array( 'onion', $user_posts_filter_pizza_topping ) ? 'checked' : ''; ?> name="user_posts_filter_pizza_topping[]" value="<?php echo esc_attr( 'onion' ); ?>">
+					<label><input type="checkbox" <?php echo is_array( $user_posts_filter_pizza_topping ) && in_array( 'onion', $user_posts_filter_pizza_topping ) ? 'checked' : ''; ?> name="user_posts_filter_pizza_topping[]" value="<?php echo esc_attr( 'onion' ); ?>">
 						<?php esc_html_e( 'Onion', 'marko-woocommerce-api-fetch' ); ?>
 					</label>
 				</p>
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 					<label>
-						<input type="checkbox" <?php echo in_array( 'mushroom', $user_posts_filter_pizza_topping ) ? 'checked' : ''; ?> name="user_posts_filter_pizza_topping[]" value="<?php echo esc_attr( 'mushroom' ); ?>">
+						<input type="checkbox" <?php echo is_array( $user_posts_filter_pizza_topping ) && in_array( 'mushroom', $user_posts_filter_pizza_topping ) ? 'checked' : ''; ?> name="user_posts_filter_pizza_topping[]" value="<?php echo esc_attr( 'mushroom' ); ?>">
 						<?php esc_html_e( 'Mushroom', 'marko-woocommerce-api-fetch' ); ?>
 					</label>
 				</p>

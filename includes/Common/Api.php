@@ -38,10 +38,11 @@ final class Api {
 		// Request variable $api_url.
 		$api_url = 'https://httpbin.org/post';
 
-		if ( get_transient( 'marko_woocommerce_api_fetch_transient' ) ) {
-			$html = get_transient( 'marko_woocommerce_api_fetch_transient' );
+		$user_id = get_current_user_id();
+
+		if ( get_transient( 'marko_woocommerce_api_fetch_transient_id_' . $user_id ) ) {
+			$html = get_transient( 'marko_woocommerce_api_fetch_transient_id_' . $user_id );
 		} else {
-			$user_id = get_current_user_id();
 
 			if ( $user_id <= 0 ) {
 				return;
@@ -50,6 +51,10 @@ final class Api {
 			$user_posts_filter_name          = get_user_meta( $user_id, 'marko_waf_user_posts_filter_name', true );
 			$user_posts_filter_pizza_size    = get_user_meta( $user_id, 'marko_waf_user_posts_filter_pizza_size', true );
 			$user_posts_filter_pizza_topping = get_user_meta( $user_id, 'marko_waf_user_posts_filter_pizza_topping', true );
+
+			if ( empty( $user_posts_filter_name ) || empty( $user_posts_filter_pizza_size ) || empty( $user_posts_filter_pizza_topping ) ) {
+				return;
+			}
 
 			// Request variables $body.
 			$body = [
@@ -92,7 +97,7 @@ final class Api {
 
 				$transient_option = isset( $transient_option ) && ! empty( $transient_option ) ? $transient_option : 0;
 
-				set_transient( 'marko_woocommerce_api_fetch_transient', $html, intval( $transient_option ) );
+				set_transient( 'marko_woocommerce_api_fetch_transient_id_' . $user_id, $html, intval( $transient_option ) );
 			}
 		}
 
@@ -124,6 +129,8 @@ final class Api {
 
 	// When user meta gets updated delete transient.
 	public static function when_update_any_user_meta() {
-		delete_transient( 'marko_woocommerce_api_fetch_transient' );
+		$user_id = get_current_user_id();
+
+		delete_transient( 'marko_woocommerce_api_fetch_transient_id_' . $user_id );
 	}
 }

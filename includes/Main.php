@@ -86,6 +86,8 @@ final class Main {
 			Common::hooks();
 		}
 
+		Customizations\Api_Widget::hooks();
+
 		// Set up localisation.
 		self::load_plugin_textdomain();
 

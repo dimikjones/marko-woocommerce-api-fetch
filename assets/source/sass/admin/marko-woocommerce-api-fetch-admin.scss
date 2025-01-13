@@ -2,3 +2,25 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+
+/* Include variables and mixins */
+@import '../variables-mixins';
+
+.marko-woocommerce-api-fetch-admin-form {
+
+	.marko-woocommerce-api-fetch-row {
+		border: 2px solid var(--mwaf-main-color);
+
+		th {
+			padding: 20px 10px 20px;
+		}
+
+		select {
+			min-width: 200px;
+		}
+
+		.description {
+			font-style: italic;
+		}
+	}
+}

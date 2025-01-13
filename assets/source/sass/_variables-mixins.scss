@@ -1,0 +1,36 @@
+// css variables
+:root {
+	--mwaf-main-color: #7f54b3;
+	--mwaf-white-color: #fff;
+
+}
+
+// scss variables
+$transition-timing: .2s ease-out;
+
+@mixin mwafWooMyAccountUserPreferences() {
+	border: 2px solid var(--mwaf-main-color);
+
+	.marko-waf-heading {
+		background-color: var(--mwaf-main-color);
+		color: var(--mwaf-white-color);
+		font-weight: 500;
+		padding: 10px;
+	}
+
+	> p {
+		margin-bottom: 5px;
+		padding: 0 10px;
+
+		&:last-of-type {
+			margin-bottom: 15px;
+		}
+
+		strong {
+
+			&:after {
+				content: ":";
+			}
+		}
+	}
+}

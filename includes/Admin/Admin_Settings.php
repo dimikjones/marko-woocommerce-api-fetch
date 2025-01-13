@@ -132,7 +132,7 @@ final class Admin_Settings {
 		?>
 		<div class="wrap">
 			<h1><?php esc_html_e( 'WooCommerce API Fetch Settings Page', 'marko-woocommerce-api-fetch' ); ?></h1>
-			<form action="options.php" method="post">
+			<form class="marko-woocommerce-api-fetch-admin-form" action="options.php" method="post">
 				<?php
 				// Output security fields for the registered setting "marko-woocommerce-api-fetch".
 				settings_fields( 'marko-woocommerce-api-fetch' );

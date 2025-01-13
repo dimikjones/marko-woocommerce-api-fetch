@@ -2,3 +2,71 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+
+
+/* Include variables and mixins */
+@import '../variables-mixins';
+
+// my-account/user-posts/ form styling
+.marko-waf-admin-options-block {
+
+	input[type=text],
+	input[type=number],
+	input[type=email],
+	input[type=tel],
+	input[type=url],
+	input[type=password],
+	input[type=search],
+	textarea,
+	.input-text {
+		border: 2px solid transparent;
+		border-bottom-color: var(--mwaf-main-color);
+		transition: border-color $transition-timing, outline-color $transition-timing;
+		outline: none;
+
+		&:focus {
+			outline: none;
+			border-color: var(--mwaf-main-color);
+		}
+	}
+
+	label {
+		display: inline-flex;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		width: auto;
+		cursor: pointer;
+		margin-right: 5px;
+	}
+
+	fieldset {
+		border: 2px solid var(--mwaf-main-color);
+
+		legend {
+			color: var(--mwaf-white-color);
+			background: var(--mwaf-main-color);
+		}
+
+		> p {
+			margin-bottom: 5px;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.woocommerce-account {
+
+	.marko-waf-public {
+
+		&.user-preferences {
+			@include mwafWooMyAccountUserPreferences();
+		}
+	}
+}

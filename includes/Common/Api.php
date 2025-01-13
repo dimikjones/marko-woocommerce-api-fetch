@@ -115,7 +115,7 @@ final class Api {
 
 		$html = '<div class="marko-waf-public user-preferences">';
 
-		$html .= "<h4>" . esc_html__( 'User Preferences from API Response', 'marko_woocommerce_api_fetch_nonce' ) . "</h4>";
+		$html .= "<h4 class='marko-waf-heading'>" . esc_html__( 'User Preferences from API Response', 'marko_woocommerce_api_fetch_nonce' ) . "</h4>";
 
 		foreach ( $response_arr as $key => $preference ) :
 			$preference = is_array( $preference ) ? implode( ', ', $preference ) : $preference;

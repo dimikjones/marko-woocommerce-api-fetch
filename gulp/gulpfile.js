@@ -273,7 +273,7 @@ gulp.task(
 	function (done) {
 		plugins.forEach(
 			function (plugin) {
-				var args = '../../' + plugin + ' ../../' + plugin + '/languages/' + plugin + '.pot';
+				var args = '../../' + plugin + ' ../../' + plugin + '/i18n/languages/' + plugin + '.pot';
 
 				runCMD( 'wp i18n make-pot', args, done );
 			}

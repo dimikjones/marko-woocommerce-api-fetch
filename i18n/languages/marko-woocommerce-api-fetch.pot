@@ -1,0 +1,208 @@
+# Copyright (C) 2025 Marko
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Marko WooCommerce API Fetch 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/marko-woocommerce-api-fetch\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-01-14T08:35:24+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: marko-woocommerce-api-fetch\n"
+
+#. Plugin Name of the plugin
+#: marko-woocommerce-api-fetch.php
+msgid "Marko WooCommerce API Fetch"
+msgstr ""
+
+#. Description of the plugin
+#: marko-woocommerce-api-fetch.php
+msgid "Display response from API according to user preferences in WooCommerce my-account/user-posts/ page."
+msgstr ""
+
+#. Author of the plugin
+#: marko-woocommerce-api-fetch.php
+msgid "Marko"
+msgstr ""
+
+#: includes/Admin/Admin_Settings.php:48
+msgid "Adjust options here."
+msgstr ""
+
+#: includes/Admin/Admin_Settings.php:57
+msgid "Transient Expiration Time"
+msgstr ""
+
+#: includes/Admin/Admin_Settings.php:83
+msgid "None"
+msgstr ""
+
+#: includes/Admin/Admin_Settings.php:86
+msgid "Hour"
+msgstr ""
+
+#: includes/Admin/Admin_Settings.php:89
+msgid "Day"
+msgstr ""
+
+#: includes/Admin/Admin_Settings.php:92
+msgid "Week"
+msgstr ""
+
+#: includes/Admin/Admin_Settings.php:95
+msgid "Month"
+msgstr ""
+
+#: includes/Admin/Admin_Settings.php:99
+msgid "By choosing None transient will be disabled."
+msgstr ""
+
+#: includes/Admin/Admin_Settings.php:111
+msgid "Options for the WooCommerce API Fetch Plugin."
+msgstr ""
+
+#: includes/Admin/Admin_Settings.php:127
+msgid "Settings Saved"
+msgstr ""
+
+#: includes/Admin/Admin_Settings.php:134
+msgid "WooCommerce API Fetch Settings Page"
+msgstr ""
+
+#: includes/Common/Api.php:89
+msgid "There was a problem retrieving the response from the server."
+msgstr ""
+
+#: includes/Common/Api.php:111
+msgid "Recipient Name"
+msgstr ""
+
+#: includes/Common/Api.php:112
+#: templates/public-my-account-user-posts-form.php:48
+msgid "Pizza Size"
+msgstr ""
+
+#: includes/Common/Api.php:113
+msgid "Pizza Topping"
+msgstr ""
+
+#: includes/Common/Api.php:117
+msgid "User Preferences from API Response"
+msgstr ""
+
+#: includes/Customizations/Api_Widget.php:40
+msgid "Widget for displaying user preferences response from API Call."
+msgstr ""
+
+#: includes/Customizations/Api_Widget.php:61
+msgid "Log in in order to access your preferences."
+msgstr ""
+
+#: includes/Customizations/Api_Widget.php:85
+msgid "There are no options for this widget."
+msgstr ""
+
+#: includes/Front/Woo_My_Account_Settings.php:57
+msgid "User Specific Posts"
+msgstr ""
+
+#: includes/Front/Woo_My_Account_Settings.php:81
+msgid "Dashboard"
+msgstr ""
+
+#: includes/Front/Woo_My_Account_Settings.php:82
+msgid "Orders"
+msgstr ""
+
+#: includes/Front/Woo_My_Account_Settings.php:83
+msgid "Downloads"
+msgstr ""
+
+#: includes/Front/Woo_My_Account_Settings.php:85
+msgid "Payment methods"
+msgstr ""
+
+#: includes/Front/Woo_My_Account_Settings.php:86
+msgid "Account details"
+msgstr ""
+
+#: includes/Front/Woo_My_Account_Settings.php:87
+msgid "User Posts"
+msgstr ""
+
+#: includes/Front/Woo_My_Account_Settings.php:88
+msgid "Log out"
+msgstr ""
+
+#: includes/Main.php:55
+#: includes/Main.php:65
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#. Translators: The minimum PHP version
+#: includes/Main.php:128
+msgid "WordPress Plugin Boilerplate requires a minimum PHP version of %s."
+msgstr ""
+
+#. Translators: The minimum WP version
+#: includes/Main.php:133
+msgid "WordPress Plugin Boilerplate requires a minimum WordPress version of %s."
+msgstr ""
+
+#. Translators: The minimum WC version
+#: includes/Main.php:138
+msgid "WordPress Plugin Boilerplate requires a minimum WooCommerce version of %s."
+msgstr ""
+
+#. translators: 1: composer command. 2: plugin directory
+#: marko-woocommerce-api-fetch.php:54
+msgid "Your installation of WordPress Plugin Boilerplate plugin is incomplete. Please run %1$s within the %2$s directory."
+msgstr ""
+
+#: templates/public-my-account-user-posts-form.php:43
+msgid "Name"
+msgstr ""
+
+#: templates/public-my-account-user-posts-form.php:45
+msgid "Enter name for the recipient."
+msgstr ""
+
+#: templates/public-my-account-user-posts-form.php:53
+msgid "Small"
+msgstr ""
+
+#: templates/public-my-account-user-posts-form.php:59
+msgid "Medium"
+msgstr ""
+
+#: templates/public-my-account-user-posts-form.php:65
+msgid "Large"
+msgstr ""
+
+#: templates/public-my-account-user-posts-form.php:70
+msgid "Pizza Toppings"
+msgstr ""
+
+#: templates/public-my-account-user-posts-form.php:74
+msgid "Bacon"
+msgstr ""
+
+#: templates/public-my-account-user-posts-form.php:80
+msgid "Extra Cheese"
+msgstr ""
+
+#: templates/public-my-account-user-posts-form.php:85
+msgid "Onion"
+msgstr ""
+
+#: templates/public-my-account-user-posts-form.php:91
+msgid "Mushroom"
+msgstr ""
+
+#: templates/public-my-account-user-posts-form.php:99
+msgid "Save"
+msgstr ""

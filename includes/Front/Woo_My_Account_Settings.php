@@ -95,11 +95,7 @@ final class Woo_My_Account_Settings {
 	 */
 	public static function save_account_details() {
 
-		$nonce_value = '';
-
-		if ( isset( $_REQUEST['marko_woocommerce_api_fetch_nonce'] ) ) {
-			$nonce_value = sanitize_text_field( wp_unslash( $_REQUEST['marko_woocommerce_api_fetch_nonce'] ) );
-		}
+		$nonce_value = isset( $_REQUEST['marko_woocommerce_api_fetch_nonce'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['marko_woocommerce_api_fetch_nonce'] ) ) : '';
 
 		if ( ! wp_verify_nonce( $nonce_value, 'marko_woocommerce_api_fetch_action' ) ) {
 			return;
